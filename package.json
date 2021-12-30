@@ -1,0 +1,19 @@
+{
+  "name": "random-user-browser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "-": "^0.0.1",
+    "apollo-server": "^3.5.0",
+    "g": "^2.0.1",
+    "graphql": "^15.8.0",
+    "nodemon": "^2.0.15"
+  }
+}
