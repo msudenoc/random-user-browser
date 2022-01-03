@@ -98,4 +98,4 @@ const userSchema = new Schema<any, User>({
   subscription: subscriptionSchema,
 });
 
-export const UserModel = mongoose.model('user', userSchema);
+export const UserModel = mongoose.model<User>('user', userSchema);

@@ -1,8 +1,35 @@
 import { Field, ID, ObjectType } from 'type-graphql';
 import 'reflect-metadata';
+import { User } from './user';
+
+export interface Address {
+  id: number;
+  uid: string;
+  city: string;
+  streetName: string;
+  streetAddress: string;
+  secondaryAddress: string;
+  buildingNumber: string;
+  mailBox: string;
+  community: string;
+  zipCode: string;
+  zip: string;
+  postCode: string;
+  timeZone: string;
+  streetSuffix: string;
+  citySuffix: string;
+  cityPrefix: string;
+  state: string;
+  stateAbbr: string;
+  country: string;
+  countryCode: string;
+  latitude: number;
+  longitude: number;
+  fullAddress: string;
+}
 
 @ObjectType()
-export class Address {
+export class PhysicalAddress implements Address {
   @Field()
   id: number;
 
@@ -71,4 +98,7 @@ export class Address {
 
   @Field()
   fullAddress: string;
+
+  @Field(() => [User])
+  users: User[];
 }

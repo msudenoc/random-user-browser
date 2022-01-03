@@ -89,4 +89,4 @@ const AddressSchema = new Schema<any, Address>({
   },
 });
 
-export const AddressModel = mongoose.model('Address', AddressSchema, 'addresses');
+export const AddressModel = mongoose.model<Address>('Address', AddressSchema, 'addresses');

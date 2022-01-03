@@ -3,7 +3,12 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
-type Address {
+"""
+The javascript `Date` as string. Type represents date and time as the ISO Date string.
+"""
+scalar DateTime
+
+type PhysicalAddress {
   buildingNumber: String!
   city: String!
   cityPrefix: String!
@@ -25,18 +30,13 @@ type Address {
   streetSuffix: String!
   timeZone: String!
   uid: ID!
+  users: [User!]!
   zip: String!
   zipCode: String!
 }
 
-"""
-The javascript `Date` as string. Type represents date and time as the ISO Date string.
-"""
-scalar DateTime
-
 type Query {
-  get: [User!]!
-  getAddressList: [Address!]!
+  getAddressList: [PhysicalAddress!]!
   getUserList: [User!]!
 }
 

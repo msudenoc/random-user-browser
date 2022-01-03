@@ -10,11 +10,4 @@ export class UserResolver {
 
     return res;
   }
-
-  @Query(() => [User])
-  async get(): Promise<User[]> {
-    const res = await UserModel.find({}).then();
-
-    return res;
-  }
 }

@@ -2,8 +2,8 @@ import Express from 'express';
 import { AddressResolver } from './resolvers/address-resolver';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
-import { connect } from 'mongoose';
 import { UserResolver } from './resolvers/user-resolver';
+import { createConnection } from 'typeorm';
 
 const main = async () => {
   const schema = await buildSchema({
@@ -12,8 +12,13 @@ const main = async () => {
     validate: false,
   });
 
-  // create mongoose connection
-  await connect('mongodb://localhost:27017/randomData');
+  createConnection({
+    type: 'mongodb',
+    host: 'localhost',
+    port: 27017,
+    database: 'randomData',
+    entities: [__dirname + ' /../**/*.entity.{js,ts}'],
+  });
 
   const server = new ApolloServer({ schema });
 

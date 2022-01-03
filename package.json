@@ -22,7 +22,8 @@
     "graphql": "^15.8.0",
     "mongoose": "^6.1.4",
     "reflect-metadata": "^0.1.13",
-    "type-graphql": "^1.1.1"
+    "type-graphql": "^1.1.1",
+    "typeorm": "^0.2.41"
   },
   "devDependencies": {
     "@types/express": "github:types/express",
